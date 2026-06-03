@@ -12,7 +12,7 @@ import sitemap from '@astrojs/sitemap';
 //   - delete public/CNAME
 //   - use Astro's base-aware helpers for links (import.meta.env.BASE_URL).
 export default defineConfig({
-  site: 'https://your-domain.com',
+  site: 'https://clararhee.com',
   base: '/',
   integrations: [sitemap()],
   markdown: {
