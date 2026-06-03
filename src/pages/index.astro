@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostList from '../components/PostList.astro';
+
+// Drafts are visible in `astro dev` so the list looks real while writing,
+// but excluded from production builds (`import.meta.env.PROD`).
+const posts = (await getCollection('blog'))
+  .filter((p) => import.meta.env.DEV || !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="DevLog">
+  <section class="intro">
+    <p>
+      I'm building small games solo, leaning hard on AI for code, art, and
+      everything in between. This is the running log: what I shipped, what
+      broke, and what I'd do differently.
+    </p>
+    <p>
+      Each round is a short series of posts. New rounds get added as I keep
+      going — browse by tag, or just read top to bottom.
+    </p>
+  </section>
+
+  <PostList posts={posts} />
+</BaseLayout>
