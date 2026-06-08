@@ -12,6 +12,8 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.6.0",
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "@fontsource/spectral": "^5.2.8",
     "astro": "^5.14.1"
   }
 }

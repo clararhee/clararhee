@@ -11,3 +11,12 @@ npm-debug.log*
 .env.production
 # macOS
 .DS_Store
+
+# Local working files — kept on disk but out of the repo.
+# Raw media (videos exceed GitHub's 100MB limit; host/compress before use).
+/Media/
+*.mov
+# Scratch drafts & design references (not part of the built site).
+/about.html
+/series_preview.html
+/article_*_working.md
