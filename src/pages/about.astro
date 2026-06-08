@@ -4,37 +4,63 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="About"
-  description="Who I am and why I'm writing this log."
+  description="Clara Rhee — building games solo with AI, writing an honest log of what that's actually like."
 >
-  <h1>About</h1>
+  <p class="section-label">About</p>
+  <h1>Clara Rhee</h1>
 
   <p>
-    Hi, I'm <strong>Clara</strong>. I build small games solo, using AI for as
-    much of the work as I can — code, art, design, the boring parts. This site
-    is where I write down what that actually looks like.
+    Hey, I'm Clara! This is my corner of the web for writing about solo
+    development, AI development workflow &amp; integration, and beyond.
   </p>
 
   <p>
-    {/* TODO: a few sentences on your background — what you did before, how you
-       got into making games, what you're trying to figure out. */}
-    I started [where you started], and somewhere along the way I got obsessed
-    with how far one person can get with AI as a collaborator. Still finding
-    out.
+    I previously worked as a game developer / PM / producer at Krafton, on
+    titles like Mega Hotel Tycoon (Roblox), The Callisto Protocol, Moonbreaker,
+    an unannounced project, and most recently PUBG at PUBG Studios.
   </p>
 
-  <h2>What this is</h2>
   <p>
-    Not tutorials, not hot takes — just an honest log. Each round is a short
-    series of posts about a project: what I shipped, what broke, what I'd do
-    differently. If you're trying the same thing, I hope some of it saves you
-    time.
+    In January 2026 I quit to build solo with AI. The notes here are an honest
+    record of what that's actually like — the wins and the failures and the
+    messy bits in between.
   </p>
 
-  <h2>Elsewhere</h2>
   <p>
-    {/* TODO: replace with your real links, or delete the ones you don't use. */}
-    <a href="https://github.com/your-handle">GitHub</a> ·
-    <a href="https://x.com/your-handle">X</a> ·
-    <a href="mailto:clararhee7@gmail.com">Email</a>
+    I enjoy transparently sharing my thoughts, my battles, and my recent
+    interests. If you're interested, subscribe to the <a href="/rss.xml">RSS feed</a>.
   </p>
+
+  <p>
+    If you're working on something similar, or just curious, drop me a line.
+    I'd love to hear from you.
+  </p>
+
+  <div class="contact">
+    <a href="mailto:clararhee7@gmail.com">clararhee7@gmail.com</a>
+    <span class="divider">·</span>
+    <a
+      href="https://www.linkedin.com/in/yong-eun-rhee-0640621a2"
+      target="_blank"
+      rel="noopener"
+    >LinkedIn</a>
+  </div>
 </BaseLayout>
+
+<style>
+  .contact {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+  }
+  .contact a {
+    margin-right: 1rem;
+  }
+  .contact .divider {
+    color: var(--rule);
+    margin-right: 1rem;
+  }
+</style>
