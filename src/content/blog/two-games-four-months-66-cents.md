@@ -80,6 +80,11 @@ Building it was its own kind of war. Connecting Cursor to the Roblox Studio work
 
 I launched Yeet Arena on March 10, 2026, about a month after I left my job.
 
+<figure>
+  <img src="/images/yeet-banner.jpg" alt="Yeet Arena promo art: snowy cabin arena where players roll giant snowballs and launch them at each other, with the Yeet Arena logo and a Play Now button." />
+  <figcaption>The Yeet Arena thumbnail</figcaption>
+</figure>
+
 A note on ads before the numbers. Roblox has a built-in advertising system that's straightforward to use: set targeting, set a budget, and it serves ads inside the Roblox client. Without ads, a new game is almost impossible to discover (there are too many). So I turned ads on right after launch. I wasn't nervous about the money. What I felt was excitement. Real players were about to play my game. I wanted to see how they moved through it, what they did first, what they ignored. The ad spend was the cost of meeting them.
 
 ### The numbers
