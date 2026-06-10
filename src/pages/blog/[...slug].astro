@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import PostLayout from '../../layouts/PostLayout.astro';
+import { getSeriesNeighbors } from '../../utils/posts';
 
 export async function getStaticPaths() {
   // Draft pages render in dev only; excluded from production builds.
@@ -14,8 +15,15 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content, remarkPluginFrontmatter } = await post.render();
 const { title, description, pubDate, tags, draft } = post.data;
+
+const minutesRead = remarkPluginFrontmatter.minutesRead as number | undefined;
+const { prev, next, startHere, title: seriesName } =
+  await getSeriesNeighbors(post);
+
+// Social card image generated per-post by the /og route.
+const ogImage = `/og/${post.slug}.png`;
 ---
 
 <PostLayout
@@ -24,6 +32,12 @@ const { title, description, pubDate, tags, draft } = post.data;
   pubDate={pubDate}
   tags={tags}
   draft={draft}
+  minutesRead={minutesRead}
+  seriesName={seriesName}
+  prev={prev}
+  next={next}
+  startHere={startHere}
+  ogImage={ogImage}
 >
   <Content />
 </PostLayout>

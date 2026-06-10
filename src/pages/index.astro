@@ -1,16 +1,18 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostList from '../components/PostList.astro';
+import { SITE } from '../consts';
+import { getPublishedPosts, groupBySeries } from '../utils/posts';
 
-// Drafts are visible in `astro dev` so the list looks real while writing,
-// but excluded from production builds (`import.meta.env.PROD`).
-const posts = (await getCollection('blog'))
-  .filter((p) => import.meta.env.DEV || !p.data.draft)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = await getPublishedPosts();
+const { rounds, loose } = groupBySeries(posts);
+
+// Group into round sections only once there's more than one round; with a
+// single round (or just loose posts) the home stays a clean flat list.
+const grouped = rounds.length > 1;
 ---
 
-<BaseLayout title="DevLog">
+<BaseLayout title={SITE.name}>
   <section class="intro">
     <p>
       I'm building small games solo, leaning hard on AI for code, art, and
@@ -23,6 +25,27 @@ const posts = (await getCollection('blog'))
     </p>
   </section>
 
-  <p class="section-label">Posts</p>
-  <PostList posts={posts} />
+  {
+    grouped ? (
+      <>
+        {rounds.map((round) => (
+          <section class="round">
+            <h2 class="round-title">{round.title}</h2>
+            <PostList posts={round.posts} startHereSlug={round.posts[0]?.slug} />
+          </section>
+        ))}
+        {loose.length > 0 && (
+          <section class="round">
+            <h2 class="round-title">More</h2>
+            <PostList posts={loose} />
+          </section>
+        )}
+      </>
+    ) : (
+      <>
+        <p class="section-label">Posts</p>
+        <PostList posts={posts} />
+      </>
+    )
+  }
 </BaseLayout>

@@ -1,5 +1,6 @@
 ---
 import Nav from '../components/Nav.astro';
+import { SITE } from '../consts';
 // Self-hosted fonts — no external Google Fonts requests.
 import '@fontsource/spectral/400.css';
 import '@fontsource/spectral/400-italic.css';
@@ -13,26 +14,36 @@ interface Props {
   description?: string;
   /** Optional override for og:type, defaults to 'website'. */
   ogType?: string;
+  /** Optional path (e.g. '/og/slug.png') to a social card image. */
+  ogImage?: string;
 }
 
 const {
   title,
-  description = 'Building games solo with AI. A running log of what worked and what broke.',
+  description = SITE.description,
   ogType = 'website',
+  ogImage,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const siteName = 'DevLog';
+const siteName = SITE.name;
 const fullTitle = title === siteName ? title : `${title} · ${siteName}`;
 const year = new Date().getFullYear();
+const ogImageUrl = ogImage ? new URL(ogImage, Astro.site).href : undefined;
 
-// GoatCounter analytics (privacy-friendly, no cookies, ~3.5KB).
-// Set this to your site code after signing up at https://www.goatcounter.com/
-// e.g. 'clararhee' for a clararhee.goatcounter.com dashboard.
-// Left empty → no script is emitted. Only loads in production builds, so local
-// `astro dev` visits are never counted.
+// GoatCounter analytics (privacy-friendly, cookieless, ~3.5KB). Production only.
 const GOATCOUNTER_CODE = 'yrhee4';
 const analyticsOn = GOATCOUNTER_CODE && import.meta.env.PROD;
+
+// Footer / contact links — only those configured in consts.ts appear.
+const ext = (href: string) => href.startsWith('http');
+const footerLinks = [
+  SITE.substack && { label: 'Subscribe', href: SITE.substack },
+  SITE.x && { label: 'X', href: SITE.x },
+  SITE.linkedin && { label: 'LinkedIn', href: SITE.linkedin },
+  { label: 'RSS', href: '/rss.xml' },
+  { label: 'Email', href: `mailto:${SITE.email}` },
+].filter(Boolean) as { label: string; href: string }[];
 ---
 
 <!doctype html>
@@ -57,11 +68,13 @@ const analyticsOn = GOATCOUNTER_CODE && import.meta.env.PROD;
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content={ogImageUrl ? 'summary_large_image' : 'summary'} />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
+    {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
 
     <meta name="generator" content={Astro.generator} />
   </head>
@@ -72,7 +85,22 @@ const analyticsOn = GOATCOUNTER_CODE && import.meta.env.PROD;
         <slot />
       </main>
       <footer class="site-footer">
-        <p>&copy; {year} DevLog · <a href="/rss.xml">RSS</a></p>
+        <p class="footer-links">
+          {
+            footerLinks.map((l, i) => (
+              <>
+                {i > 0 && <span class="sep">·</span>}
+                <a
+                  href={l.href}
+                  {...(ext(l.href) ? { target: '_blank', rel: 'noopener' } : {})}
+                >
+                  {l.label}
+                </a>
+              </>
+            ))
+          }
+        </p>
+        <p class="footer-copy">&copy; {year} {SITE.name}</p>
       </footer>
     </div>
     {

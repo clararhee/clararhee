@@ -1,5 +1,6 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
+import { SITE } from '../consts';
 
 export async function GET(context) {
   // The feed only ever carries published posts — never drafts.
@@ -8,8 +9,8 @@ export async function GET(context) {
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
   return rss({
-    title: 'DevLog',
-    description: 'Building games solo with AI — what worked and what broke.',
+    title: SITE.name,
+    description: SITE.description,
     site: context.site,
     items: posts.map((post) => ({
       title: post.data.title,

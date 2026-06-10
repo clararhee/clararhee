@@ -1,5 +1,9 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Subscribe from '../components/Subscribe.astro';
+import type { CollectionEntry } from 'astro:content';
+
+type Post = CollectionEntry<'blog'>;
 
 interface Props {
   title: string;
@@ -7,9 +11,27 @@ interface Props {
   pubDate: Date;
   tags: string[];
   draft: boolean;
+  minutesRead?: number;
+  seriesName?: string | null;
+  prev?: Post | null;
+  next?: Post | null;
+  startHere?: Post | null;
+  ogImage?: string;
 }
 
-const { title, description, pubDate, tags, draft } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  tags,
+  draft,
+  minutesRead,
+  seriesName,
+  prev,
+  next,
+  startHere,
+  ogImage,
+} = Astro.props;
 
 const dateStr = pubDate.toLocaleDateString('en-US', {
   year: 'numeric',
@@ -19,15 +41,56 @@ const dateStr = pubDate.toLocaleDateString('en-US', {
 const isoDate = pubDate.toISOString();
 ---
 
-<BaseLayout title={title} description={description} ogType="article">
+<BaseLayout title={title} description={description} ogType="article" ogImage={ogImage}>
   <article class="post">
     <header class="post-header">
       <p class="post-meta">
         <time datetime={isoDate}>{dateStr}</time>
-        {tags.length > 0 && <span>{' · '}{tags.join(' · ')}</span>}
+        {minutesRead && (<><span class="sep">·</span>{minutesRead} min read</>)}
+        {tags.map((t) => (
+          <><span class="sep">·</span><a href={`/tags/${t}/`}>{t}</a></>
+        ))}
       </p>
       <h1>{title}{draft && <span class="draft-badge">draft</span>}</h1>
     </header>
+
+    {
+      startHere && (
+        <p class="series-note">
+          Part of {seriesName}. New here? Start with{' '}
+          <a href={`/blog/${startHere.slug}/`}>{startHere.data.title}</a>.
+        </p>
+      )
+    }
+
     <slot />
+
+    <Subscribe />
+
+    {
+      (prev || next) && (
+        <nav class="post-nav" aria-label="More in this round">
+          <span class="post-nav-label">More in {seriesName}</span>
+          <div class="post-nav-links">
+            {prev ? (
+              <a class="prev" href={`/blog/${prev.slug}/`}>
+                <span class="dir">← Previous</span>
+                <span class="t">{prev.data.title}</span>
+              </a>
+            ) : (
+              <span />
+            )}
+            {next ? (
+              <a class="next" href={`/blog/${next.slug}/`}>
+                <span class="dir">Next →</span>
+                <span class="t">{next.data.title}</span>
+              </a>
+            ) : (
+              <span />
+            )}
+          </div>
+        </nav>
+      )
+    }
   </article>
 </BaseLayout>

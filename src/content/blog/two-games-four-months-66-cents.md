@@ -4,6 +4,8 @@ description: "Four months building two Roblox games solo with AI: about $929 spe
 pubDate: 2026-06-10
 tags: ["recap", "roblox", "ai", "solo-dev"]
 draft: false
+series: "round-1"
+order: 1
 ---
 
 I spent $929 to earn 66 cents.

@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostList from '../../components/PostList.astro';
+import { getPublishedPosts, getAllTags } from '../../utils/posts';
+
+export async function getStaticPaths() {
+  const tags = await getAllTags();
+  const posts = await getPublishedPosts();
+  return tags.map(({ tag }) => ({
+    params: { tag },
+    props: { tag, posts: posts.filter((p) => p.data.tags.includes(tag)) },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+const count = posts.length;
+---
+
+<BaseLayout
+  title={`Posts tagged #${tag}`}
+  description={`Posts tagged ${tag}.`}
+>
+  <p class="section-label"><a href="/tags/">Tags</a> / {tag}</p>
+  <h1>#{tag}</h1>
+  <p class="tag-count">{count} {count === 1 ? 'post' : 'posts'}</p>
+  <PostList posts={posts} />
+</BaseLayout>

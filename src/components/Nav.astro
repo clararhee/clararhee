@@ -1,12 +1,19 @@
 ---
+import { SITE } from '../consts';
+
 const { pathname } = Astro.url;
 const isActive = (href: string) =>
   href === '/' ? pathname === '/' : pathname.startsWith(href);
 ---
 
-<nav class="site-nav">
-  <a class="brand" href="/">DevLog</a>
-  <a href="/" aria-current={isActive('/') ? 'page' : undefined}>Home</a>
-  <a href="/about" aria-current={isActive('/about') ? 'page' : undefined}>About</a>
-  <a href="/rss.xml">RSS</a>
-</nav>
+<header class="site-header">
+  <a class="brand" href="/">
+    <span class="wordmark">{SITE.name}</span>
+    <span class="tagline">{SITE.tagline}</span>
+  </a>
+  <nav class="site-nav">
+    <a href="/" aria-current={isActive('/') ? 'page' : undefined}>Home</a>
+    <a href="/about" aria-current={isActive('/about') ? 'page' : undefined}>About</a>
+    <a href="/rss.xml">RSS</a>
+  </nav>
+</header>
