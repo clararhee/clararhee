@@ -59,6 +59,11 @@ Also, from experience in game development, I knew that the more you work on some
 
 ## Game 1: Yeet Arena
 
+<figure>
+  <video src="/images/yeet-arena.mp4" controls preload="metadata"></video>
+  <figcaption>About a minute of Yeet Arena: rolling a snowball, launching it, knocking other players off the platform</figcaption>
+</figure>
+
 ### Picking it
 
 For the first game, the goal was speed, not novelty. I wanted to validate that working solo with AI on Roblox was possible at all. I went to the Roblox top charts and looked for something I could build solo in a month. I narrowed to three criteria:
@@ -68,11 +73,6 @@ For the first game, the goal was speed, not novelty. I wanted to validate that w
 3. **Fun for me.** Otherwise I wouldn't iterate well during development.
 
 I combined two games and landed on Yeet Arena. The first inspiration was [*Knockout!*](https://www.roblox.com/games/136764190843219/Knockout), a Roblox last-man-standing round-based game where penguins on a platform aim and fire themselves at each other. The second was a small snowball game on [itch.io](https://itch.io) (an indie game marketplace) where you roll a snowball that grows as it picks up snow, then fire it at people. In Yeet Arena, you roll your snowball larger by pushing it on the ground, then launch it at other players to knock them off the platform. Last one standing wins.
-
-<figure>
-  <video src="/images/yeet-arena.mp4" controls preload="metadata"></video>
-  <figcaption>About a minute of Yeet Arena: rolling a snowball, launching it, knocking other players off the platform</figcaption>
-</figure>
 
 ### Launching it
 
