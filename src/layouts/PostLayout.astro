@@ -9,14 +9,23 @@ interface Props {
   draft: boolean;
 }
 
-// pubDate is shown in the home index, not on the post itself (per design spec).
-const { title, description, tags, draft } = Astro.props;
+const { title, description, pubDate, tags, draft } = Astro.props;
+
+const dateStr = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+const isoDate = pubDate.toISOString();
 ---
 
 <BaseLayout title={title} description={description} ogType="article">
   <article class="post">
     <header class="post-header">
-      {tags.length > 0 && <p class="post-meta">{tags.join(' · ')}</p>}
+      <p class="post-meta">
+        <time datetime={isoDate}>{dateStr}</time>
+        {tags.length > 0 && <span>{' · '}{tags.join(' · ')}</span>}
+      </p>
       <h1>{title}{draft && <span class="draft-badge">draft</span>}</h1>
     </header>
     <slot />
