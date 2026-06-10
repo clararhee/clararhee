@@ -6,44 +6,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="About"
   description="Clara Rhee: building games solo with AI, writing an honest log of what that's actually like."
 >
-  <div class="about-layout">
-    <div class="about-text">
-      <p class="section-label">About</p>
-      <h1>Clara Rhee</h1>
+  <img
+    class="about-photo"
+    src="/images/profile.jpg"
+    alt="Clara Rhee"
+    width="900"
+    height="675"
+  />
 
-      <p>
-        Hey, I'm Clara! This is my corner of the web for writing about solo
-        development, AI development workflow &amp; integration, and beyond.
-      </p>
+  <p class="section-label">About</p>
+  <h1>Clara Rhee</h1>
 
-      <p>
-        I previously worked as a game developer / PM / producer at Krafton, on
-        titles like Mega Hotel Tycoon (Roblox), The Callisto Protocol,
-        Moonbreaker, an unannounced project, and most recently PUBG at PUBG
-        Studios.
-      </p>
+  <p>
+    Hey, I'm Clara! This is my corner of the web for writing about solo
+    development, AI development workflow &amp; integration, and beyond.
+  </p>
 
-      <p>
-        In January 2026 I quit to build solo with AI. The notes here are an
-        honest record of what that's actually like: the wins and the failures
-        and the messy bits in between.
-      </p>
+  <p>
+    I previously worked as a game developer / PM / producer at Krafton, on
+    titles like Mega Hotel Tycoon (Roblox), The Callisto Protocol, Moonbreaker,
+    an unannounced project, and most recently PUBG at PUBG Studios.
+  </p>
 
-      <p>
-        I enjoy transparently sharing my thoughts, my battles, and my recent
-        interests. If you're interested, subscribe to the <a href="/rss.xml">RSS feed</a>.
-      </p>
+  <p>
+    In January 2026 I quit to build solo with AI. The notes here are an honest
+    record of what that's actually like: the wins and the failures and the
+    messy bits in between.
+  </p>
 
-      <p>
-        If you're working on something similar, or just curious, drop me a
-        line. I'd love to hear from you.
-      </p>
-    </div>
+  <p>
+    I enjoy transparently sharing my thoughts, my battles, and my recent
+    interests. If you're interested, subscribe to the <a href="/rss.xml">RSS feed</a>.
+  </p>
 
-    <aside class="about-photo">
-      <img src="/images/profile.jpg" alt="Clara Rhee" width="900" height="675" />
-    </aside>
-  </div>
+  <p>
+    If you're working on something similar, or just curious, drop me a line.
+    I'd love to hear from you.
+  </p>
 
   <div class="contact">
     <a href="mailto:clararhee7@gmail.com">clararhee7@gmail.com</a>
@@ -57,39 +56,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  .about-layout {
-    display: flex;
-    gap: 36px;
-    align-items: flex-start;
-  }
-  .about-text {
-    flex: 2 1 0;
-    min-width: 0;
-  }
-  .about-text > :first-child {
-    margin-top: 0;
-  }
+  /* Photo floats to the upper-right; the About text wraps around and below it. */
   .about-photo {
-    flex: 1 1 0;
-  }
-  .about-photo img {
-    display: block;
-    width: 100%;
+    float: right;
+    width: 34%;
+    max-width: 250px;
     height: auto;
     border-radius: 8px;
+    margin: 4px 0 18px 28px;
+  }
+
+  .section-label {
+    margin-top: 0;
   }
 
   @media (max-width: 600px) {
-    .about-layout {
-      flex-direction: column-reverse;
-      gap: 24px;
-    }
     .about-photo {
+      float: none;
+      width: 100%;
       max-width: 240px;
+      margin: 0 0 20px;
     }
   }
 
+  /* Contact bar spans full width below the floated photo + text. */
   .contact {
+    clear: both;
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid var(--rule);
