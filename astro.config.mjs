@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import remarkGfm from 'remark-gfm';
 
 // Custom domain deployment:
 //   - `site` is the final custom domain (replace below once decided).
@@ -16,6 +17,10 @@ export default defineConfig({
   base: '/',
   integrations: [sitemap()],
   markdown: {
+    // Disable Astro's built-in GFM so we can re-add it with singleTilde off:
+    // a single ~ stays literal (for "~$929" approximations); only ~~ strikes.
+    gfm: false,
+    remarkPlugins: [[remarkGfm, { singleTilde: false }]],
     shikiConfig: {
       // Light-only design (per site-design-spec) — single light theme.
       theme: 'github-light',
