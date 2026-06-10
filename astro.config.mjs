@@ -17,9 +17,8 @@ export default defineConfig({
   integrations: [sitemap()],
   markdown: {
     shikiConfig: {
-      // Dual themes: tokens carry both light + dark colors as CSS variables.
-      // global.css swaps them via prefers-color-scheme — no client JS.
-      themes: { light: 'github-light', dark: 'github-dark' },
+      // Light-only design (per site-design-spec) — single light theme.
+      theme: 'github-light',
       wrap: true,
     },
   },

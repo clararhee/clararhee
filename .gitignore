@@ -19,5 +19,6 @@ npm-debug.log*
 # Scratch drafts & design references (not part of the built site).
 /about.html
 /series_preview.html
+/site-design-spec.md
 /article_*
 /CONTENT_GUIDE.md

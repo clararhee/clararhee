@@ -181,37 +181,30 @@ Compared to the first game: about one-sixth the traffic, but more than double th
     <text x="430" y="42" text-anchor="end" font-family="'Spectral',Georgia,serif" font-size="17" font-weight="600" fill="#1a1a1a">Yeet Arena</text>
     <text x="652" y="42" text-anchor="end" font-family="'Spectral',Georgia,serif" font-size="17" font-weight="600" fill="#1a1a1a">Game Rental</text>
     <line x1="28" y1="58" x2="652" y2="58" stroke="#d8d4c8" stroke-width="1"/>
-
     <text x="28" y="96" font-family="'Spectral',Georgia,serif" font-size="15" fill="#555">Cumulative plays</text>
     <text x="430" y="96" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" fill="#1a1a1a">24,300</text>
     <text x="652" y="96" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" fill="#1a1a1a">4,107</text>
     <line x1="28" y1="115" x2="652" y2="115" stroke="#ebe6da" stroke-width="1"/>
-
     <text x="28" y="138" font-family="'Spectral',Georgia,serif" font-size="15" fill="#555">Peak DAU</text>
     <text x="430" y="138" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" fill="#1a1a1a">6,568</text>
     <text x="652" y="138" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" fill="#1a1a1a">~200</text>
     <line x1="28" y1="157" x2="652" y2="157" stroke="#ebe6da" stroke-width="1"/>
-
     <text x="28" y="180" font-family="'Spectral',Georgia,serif" font-size="15" fill="#555">Day-1 retention</text>
     <text x="430" y="180" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" fill="#1a1a1a">1.8%</text>
     <text x="652" y="180" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" fill="#1a1a1a">4.11%</text>
     <line x1="28" y1="199" x2="652" y2="199" stroke="#ebe6da" stroke-width="1"/>
-
     <text x="28" y="222" font-family="'Spectral',Georgia,serif" font-size="15" fill="#555">Average session</text>
     <text x="430" y="222" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" fill="#1a1a1a">6 min</text>
     <text x="652" y="222" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" fill="#1a1a1a">10.4 min</text>
     <line x1="28" y1="241" x2="652" y2="241" stroke="#ebe6da" stroke-width="1"/>
-
     <text x="28" y="264" font-family="'Spectral',Georgia,serif" font-size="15" fill="#555">Revenue</text>
     <text x="430" y="264" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" fill="#1a1a1a">20 Robux</text>
     <text x="652" y="264" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" fill="#1a1a1a">168 Robux</text>
     <line x1="28" y1="283" x2="652" y2="283" stroke="#ebe6da" stroke-width="1"/>
-
     <text x="28" y="306" font-family="'Spectral',Georgia,serif" font-size="15" fill="#555">Paying users</text>
     <text x="430" y="306" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" fill="#1a1a1a">0</text>
     <text x="652" y="306" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" fill="#1a1a1a">2</text>
     <line x1="28" y1="330" x2="652" y2="330" stroke="#d8d4c8" stroke-width="1"/>
-
     <text x="340" y="356" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" fill="#888">Less traffic, but better on nearly every signal that mattered.</text>
     <line x1="0" y1="371" x2="680" y2="371" stroke="#d8d4c8" stroke-width="1"/>
   </svg>
