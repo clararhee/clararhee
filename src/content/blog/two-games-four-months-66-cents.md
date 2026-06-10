@@ -3,7 +3,7 @@ title: "Two Roblox Games, Four Months, $929 to Earn 66 Cents"
 description: "Four months building two Roblox games solo with AI: about $929 spent, 66 cents earned, and what the honest small numbers actually mean."
 pubDate: 2026-06-10
 tags: ["recap", "roblox", "ai", "solo-dev"]
-draft: true
+draft: false
 ---
 
 I spent $929 to earn 66 cents.
