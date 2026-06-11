@@ -8,8 +8,8 @@ const isActive = (href: string) =>
 
 <header class="site-header">
   <a class="brand" href="/">
-    <span class="wordmark">{SITE.name}</span>
-    <span class="tagline">{SITE.tagline}</span>
+    <span class="wordmark">{SITE.wordmark}</span>
+    <span class="byline">{SITE.author} · {SITE.tagline}</span>
   </a>
   <nav class="site-nav">
     <a href="/" aria-current={isActive('/') ? 'page' : undefined}>Home</a>

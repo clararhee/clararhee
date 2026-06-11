@@ -1,12 +1,12 @@
 // Central site config. Flip social/subscribe on by filling the empty strings —
 // anything left empty is hidden across the site (no broken links).
 export const SITE = {
-  name: 'Clara Rhee',
+  wordmark: 'devlog', // lowercase mono mark in the masthead; links home
+  author: 'Clara Rhee',
   tagline: 'Solo game dev, in public',
   description:
     'Solo game dev, in public. A running log of building games with AI: what worked and what broke.',
   url: 'https://clararhee.com',
-  author: 'Clara Rhee',
 
   // Contact / social. Empty = hidden.
   email: 'clararhee7@gmail.com',
@@ -15,9 +15,15 @@ export const SITE = {
   substack: '', // e.g. 'https://clararhee.substack.com'
 };
 
+// Title rules:
+//   posts        -> "{post title} — devlog"
+//   home/about   -> "Clara Rhee — devlog"   (pass SITE.author as the title)
+//   og:site_name -> "devlog"
+//   RSS channel  -> "devlog — Clara Rhee"
+export const titleFor = (lead: string) => `${lead} — ${SITE.wordmark}`;
+export const RSS_TITLE = `${SITE.wordmark} — ${SITE.author}`;
+
 // Optional human-readable titles for series slugs used in post frontmatter.
-// e.g. SERIES_TITLES['round-1'] -> 'Round 1: Two Games'. Falls back to a
-// prettified slug when missing.
 export const SERIES_TITLES: Record<string, string> = {
   'round-1': 'Round 1',
 };

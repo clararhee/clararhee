@@ -1,6 +1,6 @@
 ---
 import Nav from '../components/Nav.astro';
-import { SITE } from '../consts';
+import { SITE, titleFor, RSS_TITLE } from '../consts';
 // Self-hosted fonts — no external Google Fonts requests.
 import '@fontsource/spectral/400.css';
 import '@fontsource/spectral/400-italic.css';
@@ -26,8 +26,8 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const siteName = SITE.name;
-const fullTitle = title === siteName ? title : `${title} · ${siteName}`;
+const siteName = SITE.wordmark; // og:site_name -> "devlog"
+const fullTitle = titleFor(title); // "{title} — devlog"
 const year = new Date().getFullYear();
 const ogImageUrl = ogImage ? new URL(ogImage, Astro.site).href : undefined;
 
@@ -58,7 +58,7 @@ const footerLinks = [
     <link
       rel="alternate"
       type="application/rss+xml"
-      title={siteName}
+      title={RSS_TITLE}
       href={new URL('rss.xml', Astro.site)}
     />
 
@@ -100,7 +100,7 @@ const footerLinks = [
             ))
           }
         </p>
-        <p class="footer-copy">&copy; {year} {SITE.name}</p>
+        <p class="footer-copy">&copy; {year} {SITE.author}</p>
       </footer>
     </div>
     {
