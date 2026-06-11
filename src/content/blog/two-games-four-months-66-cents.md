@@ -10,7 +10,7 @@ order: 1
 
 I spent $929 to earn 66 cents.
 
-That's four months of solo development on Roblox, right after I left a producer job at Krafton, the studio behind PUBG, at the end of January 2026. Two games shipped. Two games dead. Total revenue across both: 188 Robux, about 66 cents at Roblox's developer exchange rate.
+That's four months of solo development on Roblox, right after I left a producer job at [Krafton](https://www.krafton.com), the studio behind [PUBG](https://pubg.com), at the end of January 2026. Two games shipped. Two games dead. Total revenue across both: 188 Robux, about 66 cents at Roblox's developer exchange rate.
 
 <figure>
   <img src="/images/roblox-profile.png" alt="Roblox experience cards for Game Rental Simulator and Yeet Arena Deathmatch" />
@@ -26,7 +26,7 @@ Here's what that 66 cents leaves out. I shipped two games by myself, in four mon
 
 ## Why I left my corporate job
 
-For some context: I worked at Krafton for five years. I started on a four-person team, where I shipped multiple Roblox titles including a tycoon game called [*Mega Hotel Tycoon*](https://www.roblox.com/games/6679028787/Mega-Hotel-Tycoon) that grew to 2.5 million monthly active users. After that, I moved into project management of new titles in the company, including The Callisto Protocol and Moonbreaker. During that time, I had a craving to get back into game development and feel the thrill of creating something with my own hands. So I joined a new, ambitious project as a producer and game designer, and stayed for two and a half years. From there, I moved to PUBG Studios to produce a new PUBG mode.
+For some context: I worked at Krafton for five years. I started on a four-person team, where I shipped multiple Roblox titles including a tycoon game called [*Mega Hotel Tycoon*](https://www.roblox.com/games/6679028787/Mega-Hotel-Tycoon) that grew to 2.5 million monthly active users. After that, I moved into project management of new titles in the company, including [The Callisto Protocol](https://store.steampowered.com/app/1544020/The_Callisto_Protocol/) and [Moonbreaker](https://store.steampowered.com/app/845890/Moonbreaker/). During that time, I had a craving to get back into game development and feel the thrill of creating something with my own hands. So I joined a new, ambitious project as a producer and game designer, and stayed for two and a half years. From there, I moved to PUBG Studios to produce a new PUBG mode.
 
 PUBG is a battle royale game with 700,000 to 800,000 peak daily players globally on PC. Working on it was, by most measures, a great job. The team was talented. The product had real impact. But a few months inside a live-service game of that scale, I started feeling two things at once:
 
@@ -74,7 +74,7 @@ I combined two games and landed on Yeet Arena. The first inspiration was [*Knock
 
 ### Launch day and the ad campaign
 
-Building it was its own kind of war. Connecting Cursor to the Roblox Studio workflow took longer than I expected. The information I needed was scattered, half-outdated, or just not written down anywhere I could find. Thank god for the [Rojo](https://rojo.space/) plugin, which is what makes the connection possible at all. There's a separate post coming on what I eventually figured out about the workflow. There's another one on multiplayer QA, which turned out to be its own particular nightmare when you're one person trying to test a game built for many.
+Building it was its own kind of war. Connecting [Cursor](https://cursor.com) to the Roblox Studio workflow took longer than I expected. The information I needed was scattered, half-outdated, or just not written down anywhere I could find. Thank god for the [Rojo](https://rojo.space/) plugin, which is what makes the connection possible at all. There's a separate post coming on what I eventually figured out about the workflow. There's another one on multiplayer QA, which turned out to be its own particular nightmare when you're one person trying to test a game built for many.
 
 I launched Yeet Arena on March 10, 2026, about a month after I left my job.
 
@@ -114,7 +114,7 @@ I want to dwell on these numbers. After a month of solo development, people did 
 
 I joined my own game to see what was happening. The mode I'd built was last-man-standing: when you got knocked off, you waited for the round to end before joining the next one. The waiting was long enough that people just left during it. The fun of the game was knocking other players off the platform, and the game was rationing access to that fun.
 
-I brainstormed with Gemini and shipped one update: the round now had a time limit, and whoever got the most kills won. Day-1 retention more than doubled, from 1.8% to 3.73%. Still well short of the 10% goal. I sat with Gemini and went through the data once more. The verdict was the same. I cut the ads after eight days.
+I brainstormed with [Gemini](https://gemini.google.com) and shipped one update: the round now had a time limit, and whoever got the most kills won. Day-1 retention more than doubled, from 1.8% to 3.73%. Still well short of the 10% goal. I sat with Gemini and went through the data once more. The verdict was the same. I cut the ads after eight days.
 
 <figure>
   <img src="/images/yeet-snowball.jpg" alt="In-game Yeet Arena deathmatch: a snowy arena with another player, a kills counter and timer in the HUD." />
@@ -138,7 +138,7 @@ For the second game I changed the question. Game 1 was about *can I ship.* Game 
 
 I built a small Python tool to help me decide. I called it the opportunity crawler. After years in production, looking at market data before a decision was just my reflex. The crawler itself was simple. It pulled data on Roblox genres like simulator, tycoon, obby, and roleplay: concurrents, ratings, visits, likes, dislikes. From those it derived rough scores for retention and satisfaction. The goal was to find genres where the average game's polish was within reach of one person working with AI.
 
-It pointed at two genres: simulators, and co-op extraction games. I picked simulators. I'm a simulator fan to the core (hundreds of hours in Supermarket Simulator, the House Flipper series, Gas Station Simulator, and more). I know exactly where the fun in a simulator comes from.
+It pointed at two genres: simulators, and co-op extraction games. I picked simulators. I'm a simulator fan to the core (hundreds of hours in [Supermarket Simulator](https://store.steampowered.com/app/2670630/Supermarket_Simulator/), the [House Flipper](https://store.steampowered.com/app/613100/House_Flipper/) series, [Gas Station Simulator](https://store.steampowered.com/app/1149620/Gas_Station_Simulator/), and more). I know exactly where the fun in a simulator comes from.
 
 I picked a game cartridge rental concept, inspired by [*Retro Rewind*](https://store.steampowered.com/app/3552140/Retro_Rewind__Video_Store_Simulator/): players run a store, rent out game cartridges, clean them on return, and restock the shelves.
 
@@ -239,7 +239,7 @@ I did eventually kill Game Rental Simulator too. 4.11% retention still wasn't en
 Spend:
 
 - **Roblox ads:** $109.80
-- **AI tooling subscriptions over four months:** ~$819 Cursor (~$400, two months on the Ultra plan), Claude Code Max 5x (~$220), Gemini Pro (~$85), Leonardo (~$52), Meshy (~$40), Suno (~$22)
+- **AI tooling subscriptions over four months:** ~$819 Cursor (~$400, two months on the Ultra plan), [Claude Code](https://claude.com/product/claude-code) Max 5x (~$220), Gemini Pro (~$85), [Leonardo](https://leonardo.ai) (~$52), [Meshy](https://www.meshy.ai) (~$40), [Suno](https://suno.com) (~$22)
 - **Total:** ~$929
 
 Revenue:
