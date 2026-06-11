@@ -49,13 +49,11 @@ When I decided to build solo with AI, working on games was the natural next step
 1. **The user base.** Roblox has 132 million daily users, and they're more open to trying new games because Roblox doesn't require players to install anything. They click play and the game runs in the Roblox client on any platform (PC, mobile, console). Being able to actually meet your users is a huge advantage. A lot of games and apps die without ever meeting one in the red ocean of software, even more so now that vibe coding became a thing.
 2. **The publishing pipeline.** Roblox handles publishing, ad delivery, server management, and analytics. I could ship an update whenever I wanted. No review process, no paperwork, no waiting on anyone. The feedback loop with players is usually short too. Push an update, and the analytics start moving the same hour. I can also join my own game, watch how players actually play, and chat with them in-game.
 
-## The plan
+## The plan: one game a month, killed if it fails
 
 One month per game. Ship. If it doesn't retain, kill it. Move to the next one.
 
 Five years ago I had shipped multiple Roblox games in a similar window with a small team. With AI doing the work multiple people used to do, the same one-month window felt right even working alone. Big studios can't iterate this way (too many people, too much process, too much already shipped). A solo developer can. Agility was the only real advantage I had, so I wanted to leverage it.
-
-Also, from experience in game development, I knew that the more you work on something, the harder it gets to cut it. A one-month limit was how I planned to keep myself honest later, when the data came back. Cutting anything always hurts, but minimizing the blood spill was the plan.
 
 ## Game 1: Yeet Arena
 
@@ -64,7 +62,7 @@ Also, from experience in game development, I knew that the more you work on some
   <figcaption>About a minute of Yeet Arena: rolling a snowball, launching it, knocking other players off the platform</figcaption>
 </figure>
 
-### Picking it
+### Picking a fast, familiar idea
 
 For the first game, the goal was speed, not novelty. I wanted to validate that working solo with AI on Roblox was possible at all. I went to the Roblox top charts and looked for something I could build solo in a month. I narrowed to three criteria:
 
@@ -74,7 +72,7 @@ For the first game, the goal was speed, not novelty. I wanted to validate that w
 
 I combined two games and landed on Yeet Arena. The first inspiration was [*Knockout!*](https://www.roblox.com/games/136764190843219/Knockout), a Roblox last-man-standing round-based game where penguins on a platform aim and fire themselves at each other. The second was a small snowball game on [itch.io](https://itch.io) (an indie game marketplace) where you roll a snowball that grows as it picks up snow, then fire it at people. In Yeet Arena, you roll your snowball larger by pushing it on the ground, then launch it at other players to knock them off the platform. Last one standing wins.
 
-### Launching it
+### Launch day and the ad campaign
 
 Building it was its own kind of war. Connecting Cursor to the Roblox Studio workflow took longer than I expected. The information I needed was scattered, half-outdated, or just not written down anywhere I could find. Thank god for the [Rojo](https://rojo.space/) plugin, which is what makes the connection possible at all. There's a separate post coming on what I eventually figured out about the workflow. There's another one on multiplayer QA, which turned out to be its own particular nightmare when you're one person trying to test a game built for many.
 
@@ -87,7 +85,7 @@ I launched Yeet Arena on March 10, 2026, about a month after I left my job.
 
 A note on ads before the numbers. Roblox has a built-in advertising system that's straightforward to use: set targeting, set a budget, and it serves ads inside the Roblox client. Without ads, a new game is almost impossible to discover (there are too many). So I turned ads on right after launch. I wasn't nervous about the money. What I felt was excitement. Real players were about to play my game. I wanted to see how they moved through it, what they did first, what they ignored. The ad spend was the cost of meeting them.
 
-### The numbers
+### The numbers: a spike and low retention
 
 - **Cumulative plays:** 24,300
 - **Peak DAU:** 6,568 on March 14 (the first weekend after launch)
@@ -134,7 +132,7 @@ I learned how Roblox publishing works. I learned how to ship a Roblox game with 
   <figcaption>Game Rental Simulator: run the store, rent out cartridges, restock the shelves.</figcaption>
 </figure>
 
-### Picking it
+### Picking a game based on market data
 
 For the second game I changed the question. Game 1 was about *can I ship.* Game 2 was about *how do I pick something players would actually like.*
 
@@ -149,9 +147,9 @@ I picked a game cartridge rental concept, inspired by [*Retro Rewind*](https://s
   <figcaption>About a minute of Game Rental Simulator: renting cartridges and restocking the shelves</figcaption>
 </figure>
 
-### Launching it
+### Launch, and a $10,000 economy bug
 
-It took two months instead of one. I gave myself a week to explore new AI tools and trends, then spent another two weeks on scope creep. Working with AI encourages scope creep. It keeps offering, *shall I add this? shall I refine that?* By six weeks in, I sat down with my feature list and started crossing things off. Nothing more. Ship.
+It took two months instead of one. I gave myself a week to explore new AI tools and trends, then spent another two weeks on [scope creep](https://en.wikipedia.org/wiki/Scope_creep). Working with AI encourages scope creep. It keeps offering, *shall I add this? shall I refine that?* By six weeks in, I sat down with my feature list and started crossing things off. Nothing more. Ship.
 
 The launch itself didn't go cleanly. The day I shipped, I joined my own game on mobile to see how it ran. The starting cash was wrong. I'd meant to give players 200 to start. They were starting with 10,000. I'd been sure I had this fixed, but I hadn't. The whole economy was broken on the spot. With that much cash up front, players had no reason to grind or actually run a shop.
 
@@ -164,7 +162,7 @@ I went from the couch to my desk in about four seconds. Killed the ads. Pushed a
 
 After that, finally, the launch ran clean (-ish. It had a lot of bugs that I'll write about in detail in later posts).
 
-### The numbers
+### The numbers: less traffic, better signals
 
 - **Cumulative plays:** 4,107
 - **Typical DAU:** ~200
@@ -219,7 +217,7 @@ Compared to the first game: about one-sixth the traffic, but more than double th
 
 The biggest difference: two actual people decided to spend money in Game Rental. Yeet Arena had zero paying users in 24,300 plays. But for this game, two people felt the game was worth their money, and that is HUGE.
 
-I did eventually kill Game Rental Simulator too. 4.11% retention still wasn't enough to sustain it. The players the ads brought were slipping through my fingers like sand. After a week of watching the numbers stay flat even after critical bug fixes, I killed the ads. The question that came up afterward, and is still up, is what to do next.
+I did eventually kill Game Rental Simulator too. 4.11% retention still wasn't enough to sustain it. The players the ads brought were slipping through my fingers like sand. After a week of watching the numbers stay flat even after critical bug fixes, I killed the ads.
 
 ## What this cost
 
@@ -250,12 +248,12 @@ Revenue:
 
 A thousand dollars for sixty-six cents. I'd known I was spending money, but I hadn't actually added the column up until I sat down to write this post. The ratio was more dramatic than it felt at the time.
 
-That's the number. I don't think I need to make it bigger or smaller than it is. I shipped two games, with real players, in four months, as one person. That's the fact. The financial outcome is the financial outcome. The other things I learned in those four months I couldn't have learned by reading.
+But it's better than I expected. I didn't think I'd be making any revenue at all. I was happy that there were people who were willing to spend money in my game. The things I learned in those four months I couldn't have learned by reading.
 
-What I have now isn't money. It's the ability to take a game from idea to shipped, alone, in a month. Over four months of building solo with AI, I gained conviction and courage. The conviction that I can ship a game by myself, without a team of specialists or a marketing budget. The courage that I can go beyond my comfort zone, with AI at my back.
+What I have now isn't money. It's the ability to take a game from idea to shipped, alone, in a month. Over four months of building solo with AI, I gained conviction and courage. The conviction that I can ship a game by myself, without a team of specialists or a big marketing budget. The courage that I can go beyond my comfort zone, with AI at my back.
 
 ## What's next
 
-Upcoming posts cover the details of this journey: the AI workflow I built, what multiplayer QA looks like with one person, what working with AI-generated art was really like inside Roblox's moderation system, the pros and cons of solo development, and why I'm leaving Roblox after all of this.
+Upcoming posts cover the details of this journey: the AI workflow I built, what multiplayer QA looks like with one person, what working with AI-generated art was really like, the pros and cons of solo development, and why I'm leaving Roblox after all of this.
 
 If you're thinking about quitting your job to build solo with AI, I hope something in here helps. If what I learned the hard way helps someone else build something that works, that would be enough.
