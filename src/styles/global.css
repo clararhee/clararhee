@@ -536,6 +536,53 @@ ol {
   margin: 0 0.5em;
 }
 
+/* language toggle — pure CSS (:has), shown only when a post has both EN + KO.
+   Default shows EN; selecting KO hides EN and reveals KO. Zero JS. */
+.lang-toggle {
+  display: none;
+}
+
+.post:has(.lang-en):has(.lang-ko) .lang-toggle {
+  display: inline-flex;
+  margin-bottom: 32px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.lang-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lang-toggle .opt {
+  padding: 5px 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--text-meta);
+  cursor: pointer;
+}
+
+.lang-radio:checked + .opt {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Korean blocks hidden until KO is selected. */
+.post .lang-ko {
+  display: none;
+}
+
+.post:has(#lang-ko:checked) .lang-en {
+  display: none;
+}
+
+.post:has(#lang-ko:checked) .lang-ko {
+  display: block;
+}
+
 /* "start here / part of this round" note */
 .series-note {
   font-family: var(--font-mono);

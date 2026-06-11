@@ -54,6 +54,13 @@ const isoDate = pubDate.toISOString();
       <h1>{title}{draft && <span class="draft-badge">draft</span>}</h1>
     </header>
 
+    <div class="lang-toggle">
+      <input type="radio" name="lang" id="lang-en" class="lang-radio" checked />
+      <label for="lang-en" class="opt">EN</label>
+      <input type="radio" name="lang" id="lang-ko" class="lang-radio" />
+      <label for="lang-ko" class="opt">KO</label>
+    </div>
+
     {
       startHere && (
         <p class="series-note">
