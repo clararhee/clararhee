@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import remarkGfm from 'remark-gfm';
+import rehypeExternalLinks from 'rehype-external-links';
 import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs';
 
 // Custom domain deployment:
@@ -22,6 +23,10 @@ export default defineConfig({
     // a single ~ stays literal (for "~$929" approximations); only ~~ strikes.
     gfm: false,
     remarkPlugins: [[remarkGfm, { singleTilde: false }], remarkReadingTime],
+    // External links in post bodies open in a new tab (internal links unaffected).
+    rehypePlugins: [
+      [rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
+    ],
     shikiConfig: {
       // Light-only design (per site-design-spec) — single light theme.
       theme: 'github-light',
