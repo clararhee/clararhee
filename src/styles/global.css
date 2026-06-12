@@ -600,38 +600,55 @@ ol {
   border-bottom: 1px solid var(--accent-soft);
 }
 
-/* subscribe CTA (only renders when SITE.substack is set) */
+/* subscribe form (only renders when NEWSLETTER_USER is set) */
 .subscribe {
-  margin-top: 56px;
+  margin: 56px 0 0;
   padding: 24px;
   border: 1px solid var(--rule);
   border-radius: 8px;
   text-align: center;
+  background: var(--rule-soft);
 }
 
-.subscribe-copy {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-soft);
+.subscribe p {
   margin: 0 0 14px;
+  font-style: italic;
+  color: var(--text-soft);
 }
 
-.subscribe-btn {
-  display: inline-block;
+.subscribe-form {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.subscribe-form input {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  min-width: 220px;
+}
+
+.subscribe-form button {
   font-family: var(--font-mono);
   font-size: 13px;
   letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
   color: var(--bg);
   background: var(--accent);
-  border-radius: 5px;
-  padding: 8px 20px;
-  text-decoration: none;
-  border-bottom: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: 0;
 }
 
-.subscribe-btn:hover {
-  background: var(--accent-soft);
-  border-bottom: none;
+.subscribe-form button:hover {
+  opacity: 0.9;
 }
 
 /* prev / next within a round */

@@ -1,6 +1,6 @@
 ---
 import Nav from '../components/Nav.astro';
-import { SITE, titleFor, RSS_TITLE } from '../consts';
+import { SITE, NEWSLETTER_USER, titleFor, RSS_TITLE } from '../consts';
 // Self-hosted fonts — no external Google Fonts requests.
 import '@fontsource/spectral/400.css';
 import '@fontsource/spectral/400-italic.css';
@@ -38,7 +38,10 @@ const analyticsOn = GOATCOUNTER_CODE && import.meta.env.PROD;
 // Footer / contact links — only those configured in consts.ts appear.
 const ext = (href: string) => href.startsWith('http');
 const footerLinks = [
-  SITE.substack && { label: 'Subscribe', href: SITE.substack },
+  NEWSLETTER_USER && {
+    label: 'Subscribe',
+    href: `https://buttondown.com/${NEWSLETTER_USER}`,
+  },
   SITE.x && { label: 'X', href: SITE.x },
   SITE.linkedin && { label: 'LinkedIn', href: SITE.linkedin },
   { label: 'RSS', href: '/rss.xml' },

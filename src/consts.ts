@@ -12,8 +12,11 @@ export const SITE = {
   email: 'clararhee7@gmail.com',
   linkedin: 'https://www.linkedin.com/in/yong-eun-rhee-0640621a2',
   x: '', // e.g. 'https://x.com/yourhandle'
-  substack: '', // e.g. 'https://clararhee.substack.com'
 };
+
+// Buttondown username, e.g. "clararhee". Leave "" until the account exists:
+// the subscribe form won't render until this is set, so the site is safe to ship now.
+export const NEWSLETTER_USER = '';
 
 // Title rules:
 //   posts        -> "{post title} — devlog"

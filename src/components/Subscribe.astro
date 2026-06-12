@@ -1,20 +1,22 @@
 ---
-import { SITE } from '../consts';
-// Renders only when SITE.substack is set — a clean link, no heavy iframe.
+import { NEWSLETTER_USER } from '../consts';
+// Renders only when NEWSLETTER_USER is set. Native form POST to Buttondown
+// (no JS, no popups). Clara exports the list / sends broadcasts manually.
 ---
 
 {
-  SITE.substack && (
+  NEWSLETTER_USER && (
     <aside class="subscribe">
-      <p class="subscribe-copy">New posts by email, no spam.</p>
-      <a
-        class="subscribe-btn"
-        href={SITE.substack}
+      <p>New posts as I keep building. No spam, unsubscribe anytime.</p>
+      <form
+        class="subscribe-form"
+        action={`https://buttondown.com/api/emails/embed-subscribe/${NEWSLETTER_USER}`}
+        method="post"
         target="_blank"
-        rel="noopener"
       >
-        Subscribe
-      </a>
+        <input type="email" name="email" placeholder="you@email.com" required />
+        <button type="submit">Subscribe</button>
+      </form>
     </aside>
   )
 }
