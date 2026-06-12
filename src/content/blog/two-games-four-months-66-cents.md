@@ -26,7 +26,7 @@ Here's what that 66 cents leaves out. I shipped two games by myself, in four mon
 
 ## Why I left my corporate job
 
-For some context: I worked at Krafton for five years. I started on a four-person team, where I shipped multiple Roblox titles including a tycoon game called [*Mega Hotel Tycoon*](https://www.roblox.com/games/6679028787/Mega-Hotel-Tycoon) that grew to 2.5 million monthly active users. After that, I moved into project management of new titles in the company, including [The Callisto Protocol](https://store.steampowered.com/app/1544020/The_Callisto_Protocol/) and [Moonbreaker](https://store.steampowered.com/app/845890/Moonbreaker/). During that time, I had a craving to get back into game development and feel the thrill of creating something with my own hands. So I joined a new, ambitious project as a producer and game designer, and stayed for two and a half years. From there, I moved to PUBG Studios to produce a new PUBG mode.
+For some context: I worked at Krafton for five years. I started on a four-person team, where I shipped multiple Roblox titles including a tycoon game called [*Mega Hotel Tycoon*](https://www.roblox.com/games/6679028787/Mega-Hotel-Tycoon) that grew to 2.5 million monthly active users. After that, I moved into project management of new titles in the company, including [The Callisto Protocol](https://store.steampowered.com/app/1544020/The_Callisto_Protocol/) and [Moonbreaker](https://store.steampowered.com/app/845890/Moonbreaker/). During that time, I had a craving to get back into game development and feel the thrill of creating something with my own hands. So I joined a new, ambitious project as a producer and game designer, and poured two and a half years into it, the most intense years of my career. It never made it in front of players, and when that chapter ended I moved to PUBG Studios to produce a new PUBG mode.
 
 PUBG is a battle royale game with 700,000 to 800,000 peak daily players globally on PC. Working on it was, by most measures, a great job. The team was talented. The product had real impact. But a few months inside a live-service game of that scale, I started feeling two things at once:
 
@@ -87,21 +87,25 @@ A note on ads before the numbers. Roblox has a built-in advertising system that'
 
 ### The numbers: a spike and low retention
 
-- **Cumulative plays:** 24,300
-- **Peak DAU:** 6,568 on March 14 (the first weekend after launch)
-- **CTR:** 2.46% (over 2% is considered good, which meant my thumbnail was working)
-- **Average session:** 6 minutes (10 to 15 minutes is considered good for a Roblox game)
-- **Day-1 retention:** 1.8%
-- **Revenue:** 20 Robux (~$0.07)
-- **Ad spend:** $58.00 over 8 days (March 10 to March 17)
-- **Time from launch to kill:** 8 days
+| Metric | Yeet Arena |
+|---|---|
+| Cumulative plays | 24,300 |
+| Peak DAU | 6,568 on March 14 (the first weekend after launch) |
+| CTR | 2.46% (over 2% is considered good, which meant my thumbnail was working) |
+| Average session | 6 minutes (10 to 15 minutes is considered good for a Roblox game) |
+| Day-1 retention | 1.8% |
+| Revenue | 20 Robux (~$0.07) |
+| Ad spend | $58.00 over 8 days (March 10 to March 17) |
+| Time from launch to kill | 8 days |
+
+*CTR (click-through rate) is the share of people who, after seeing the game's ad, actually clicked through to play it.*
 
 <figure>
   <img src="/images/yeet-dau.png" alt="Yeet Arena daily active users chart, March 9 to March 20, 2026, peak around 6,500 on March 14" />
   <figcaption>Yeet Arena DAU, launched March 10, peaked during the weekend, ad stopped March 17</figcaption>
 </figure>
 
-Peak DAU climbed to 6,568 by the first weekend after launch. I could have been excited, but I wasn't. Day-1 retention was 1.8%. We were losing them as fast as we were getting them. For context, a healthy Roblox arena game wants something around 10%, and the top of the genre is closer to 20%+. 1.8% is unworkable. Whatever you pour in pours straight back out.
+Peak DAU climbed to 6,568 by the first weekend after launch. It is an amazing number to see on your first launched game. BUT day-1 retention was 1.8%. We were losing them as fast as we were getting them. For context, a healthy Roblox arena game wants something around 10%, and the top of the genre is closer to 20%+. 1.8% is unworkable. Whatever you pour in pours straight back out.
 
 The revenue stung too. Developers on Roblox make money two ways:
 
@@ -123,7 +127,7 @@ I brainstormed with [Gemini](https://gemini.google.com) and shipped one update: 
 
 The decision to kill it stung in a quiet way. I'd known the game wasn't carefully designed, and games that aren't carefully designed don't tend to retain. The result wasn't surprising, but that doesn't mean it didn't hurt.
 
-I learned how Roblox publishing works. I learned how to ship a Roblox game with AI in 38 days. I learned that the ship-and-test approach was correct. Taking those painful learnings, I moved on to the second game.
+But the small pain aside, I learned how current Roblox publishing works. I learned how to ship a Roblox game with AI in 30 days. I learned that the ship-and-test approach was correct. Taking those learnings, I moved on to the second game.
 
 ## Game 2: Game Rental Simulator
 
@@ -135,6 +139,11 @@ I learned how Roblox publishing works. I learned how to ship a Roblox game with 
 ### Picking a game based on market data
 
 For the second game I changed the question. Game 1 was about *can I ship.* Game 2 was about *how do I pick something players would actually like.*
+
+<figure>
+  <img src="/images/crawler-data.png" alt="A data table named game_trends_data listing Roblox games with columns for genre tags, current players, visits, likes, dislikes, a retention index, and a satisfaction score." />
+  <figcaption>A slice of the opportunity crawler's output: Roblox games by genre, with rough retention and satisfaction scores.</figcaption>
+</figure>
 
 I built a small Python tool to help me decide. I called it the opportunity crawler. After years in production, looking at market data before a decision was just my reflex. The crawler itself was simple. It pulled data on Roblox genres like simulator, tycoon, obby, and roleplay: concurrents, ratings, visits, likes, dislikes. From those it derived rough scores for retention and satisfaction. The goal was to find genres where the average game's polish was within reach of one person working with AI.
 
@@ -151,7 +160,7 @@ I picked a game cartridge rental concept, inspired by [*Retro Rewind*](https://s
 
 It took two months instead of one. I gave myself a week to explore new AI tools and trends, then spent another two weeks on [scope creep](https://en.wikipedia.org/wiki/Scope_creep). Working with AI encourages scope creep. It keeps offering, *shall I add this? shall I refine that?* By six weeks in, I sat down with my feature list and started crossing things off. Nothing more. Ship.
 
-The launch itself didn't go cleanly. The day I shipped, I joined my own game on mobile to see how it ran. The starting cash was wrong. I'd meant to give players 200 to start. They were starting with 10,000. I'd been sure I had this fixed, but I hadn't. The whole economy was broken on the spot. With that much cash up front, players had no reason to grind or actually run a shop.
+The launch itself didn't go cleanly. The day I shipped, I joined my game on mobile while sitting on a couch to see how it ran. The starting cash was wrong. I'd meant to give players 200 to start. They were starting with 10,000. It's a bug I've found before and I'd been sure I had this fixed, but I hadn't. The whole economy was broken on the spot. With that much cash up front, players had no reason to grind or actually run a shop.
 
 <figure>
   <img src="/images/game-rental-10000.jpg" alt="Game Rental Simulator in-game: a store interior with 10,000 dollars shown in the register." />
@@ -164,14 +173,16 @@ After that, finally, the launch ran clean (-ish. It had a lot of bugs that I'll 
 
 ### The numbers: less traffic, better signals
 
-- **Cumulative plays:** 4,107
-- **Typical DAU:** ~200
-- **CTR:** 0.83% (PC-only targeting, which lowers base CTR)
-- **Average session:** 10.4 minutes
-- **Day-1 retention:** 4.11%
-- **Revenue:** 168 Robux from two in-app purchases by two different players (~$0.59)
-- **Ad spend:** $51.80
-- **Time from launch to kill:** 12 days
+| Metric | Game Rental Simulator |
+|---|---|
+| Cumulative plays | 4,107 |
+| Typical DAU | ~200 |
+| CTR | 0.83% (PC-only targeting, which lowers base CTR) |
+| Average session | 10.4 minutes |
+| Day-1 retention | 4.11% |
+| Revenue | 168 Robux from two in-app purchases by two different players (~$0.59) |
+| Ad spend | $51.80 |
+| Time from launch to kill | 12 days |
 
 <figure>
   <img src="/images/game-rental-dau.png" alt="Game Rental Simulator daily active users chart, May 11 to May 24, 2026, with two ad cycles" />
@@ -248,7 +259,7 @@ Revenue:
 
 A thousand dollars for sixty-six cents. I'd known I was spending money, but I hadn't actually added the column up until I sat down to write this post. The ratio was more dramatic than it felt at the time.
 
-But it's better than I expected. I didn't think I'd be making any revenue at all. I was happy that there were people who were willing to spend money in my game. The things I learned in those four months I couldn't have learned by reading.
+But it is better than I expected. I didn't think I'd be making any revenue at all. I was happy that there were people who were willing to spend money in my game. The things I learned in those four months I couldn't have learned by reading.
 
 What I have now isn't money. It's the ability to take a game from idea to shipped, alone, in a month. Over four months of building solo with AI, I gained conviction and courage. The conviction that I can ship a game by myself, without a team of specialists or a big marketing budget. The courage that I can go beyond my comfort zone, with AI at my back.
 
