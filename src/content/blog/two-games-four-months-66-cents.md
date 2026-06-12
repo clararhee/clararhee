@@ -91,14 +91,13 @@ A note on ads before the numbers. Roblox has a built-in advertising system that'
 |---|---|
 | Cumulative plays | 24,300 |
 | Peak DAU | 6,568 on March 14 (the first weekend after launch) |
-| CTR | 2.46% (over 2% is considered good, which meant my thumbnail was working) |
+| CTR (*CTR (click-through rate) is the share of people who, after seeing the game's ad, actually clicked through to play it.*)| 2.46% (over 2% is considered good, which meant my thumbnail was working) |
 | Average session | 6 minutes (10 to 15 minutes is considered good for a Roblox game) |
 | Day-1 retention | 1.8% |
 | Revenue | 20 Robux (~$0.07) |
 | Ad spend | $58.00 over 8 days (March 10 to March 17) |
 | Time from launch to kill | 8 days |
 
-*CTR (click-through rate) is the share of people who, after seeing the game's ad, actually clicked through to play it.*
 
 <figure>
   <img src="/images/yeet-dau.png" alt="Yeet Arena daily active users chart, March 9 to March 20, 2026, peak around 6,500 on March 14" />
