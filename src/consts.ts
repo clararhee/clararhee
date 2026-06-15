@@ -16,7 +16,7 @@ export const SITE = {
 
 // Buttondown username, e.g. "clararhee". Leave "" until the account exists:
 // the subscribe form won't render until this is set, so the site is safe to ship now.
-export const NEWSLETTER_USER = '';
+export const NEWSLETTER_USER = 'clararhee';
 
 // Title rules:
 //   posts        -> "{post title} — devlog"
