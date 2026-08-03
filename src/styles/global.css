@@ -260,7 +260,24 @@ ol {
 
 /* round sections (home) */
 .round {
-  margin-bottom: 40px;
+  margin-bottom: 48px;
+}
+
+.round-head {
+  margin: 52px 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.round:first-of-type .round-head {
+  margin-top: 0;
+}
+
+.round-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
 }
 
 .round-title {
@@ -270,13 +287,22 @@ ol {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
-  margin: 48px 0 16px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--rule);
+  margin: 0;
 }
 
-.round:first-of-type .round-title {
-  margin-top: 0;
+.round-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--text-meta);
+  white-space: nowrap;
+}
+
+.round-desc {
+  margin: 8px 0 0;
+  color: var(--text-soft);
+  font-style: italic;
+  font-size: 0.95rem;
 }
 
 .start-here {

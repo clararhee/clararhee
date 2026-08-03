@@ -1,7 +1,7 @@
 ---
 title: "Finding My AI Workflow Without Chasing the Shiny"
 description: "The tools and habits I kept after four months of solo AI game dev, and the week I wasted chasing the ones everyone was hyping."
-pubDate: 2026-06-12
+pubDate: 2026-08-03
 tags: ["workflow", "ai", "tools", "roblox"]
 series: "round-1"
 order: 2

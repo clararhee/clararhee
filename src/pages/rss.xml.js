@@ -6,7 +6,11 @@ export async function GET(context) {
   // The feed only ever carries published posts — never drafts.
   const posts = (await getCollection('blog'))
     .filter((p) => !p.data.draft)
-    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+    .sort(
+      (a, b) =>
+        b.data.pubDate.valueOf() - a.data.pubDate.valueOf() ||
+        (b.data.order ?? 0) - (a.data.order ?? 0)
+    );
 
   return rss({
     title: RSS_TITLE,

@@ -8,9 +8,11 @@ import { getPublishedPosts, groupBySeries } from '../utils/posts';
 const posts = await getPublishedPosts();
 const { rounds, loose } = groupBySeries(posts);
 
-// Group into round sections only once there's more than one round; with a
-// single round (or just loose posts) the home stays a clean flat list.
-const grouped = rounds.length > 1;
+// Posts are grouped into round sections (newest round first). Within a round
+// they read top to bottom, 01 → NN, with the first marked "Start here".
+// Any posts without a series fall into a "More" section.
+const hasRounds = rounds.length > 0;
+const n = (count: number) => `${count} ${count === 1 ? 'post' : 'posts'}`;
 ---
 
 <BaseLayout title={SITE.author}>
@@ -27,17 +29,28 @@ const grouped = rounds.length > 1;
   </section>
 
   {
-    grouped ? (
+    hasRounds ? (
       <>
         {rounds.map((round) => (
           <section class="round">
-            <h2 class="round-title">{round.title}</h2>
+            <header class="round-head">
+              <div class="round-head-row">
+                <h2 class="round-title">{round.title}</h2>
+                <span class="round-count">{n(round.posts.length)}</span>
+              </div>
+              {round.description && <p class="round-desc">{round.description}</p>}
+            </header>
             <PostList posts={round.posts} startHereSlug={round.posts[0]?.slug} />
           </section>
         ))}
         {loose.length > 0 && (
           <section class="round">
-            <h2 class="round-title">More</h2>
+            <header class="round-head">
+              <div class="round-head-row">
+                <h2 class="round-title">More</h2>
+                <span class="round-count">{n(loose.length)}</span>
+              </div>
+            </header>
             <PostList posts={loose} />
           </section>
         )}

@@ -26,7 +26,12 @@ export const NEWSLETTER_USER = 'clararhee';
 export const titleFor = (lead: string) => `${lead} — ${SITE.wordmark}`;
 export const RSS_TITLE = `${SITE.wordmark} — ${SITE.author}`;
 
-// Optional human-readable titles for series slugs used in post frontmatter.
+// Human-readable label + one-line description per series slug (used for the
+// round section header on the home page). Falls back to a prettified slug.
 export const SERIES_TITLES: Record<string, string> = {
-  'round-1': 'Round 1: Roblox',
+  'round-1': 'Round 1 · Roblox',
+};
+
+export const SERIES_DESCRIPTIONS: Record<string, string> = {
+  'round-1': 'Four months, two games, and what I learned.',
 };

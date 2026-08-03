@@ -1,5 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { SERIES_TITLES } from '../consts';
+import { SERIES_TITLES, SERIES_DESCRIPTIONS } from '../consts';
 
 export type Post = CollectionEntry<'blog'>;
 
@@ -9,12 +9,15 @@ export async function getPublishedPosts(): Promise<Post[]> {
     'blog',
     (p) => import.meta.env.DEV || !p.data.draft
   );
+  // Newest first; tie-break by `order` (desc) so same-date posts are stable.
   return posts.sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    (a, b) =>
+      b.data.pubDate.valueOf() - a.data.pubDate.valueOf() ||
+      (b.data.order ?? 0) - (a.data.order ?? 0)
   );
 }
 
-/** Human title for a series slug, e.g. 'round-1' -> 'Round 1'. */
+/** Human title for a series slug, e.g. 'round-1' -> 'Round 1 · Roblox'. */
 export function seriesTitle(slug: string): string {
   return (
     SERIES_TITLES[slug] ??
@@ -22,7 +25,17 @@ export function seriesTitle(slug: string): string {
   );
 }
 
-export type Round = { series: string; title: string; posts: Post[] };
+/** Optional one-line description for a series slug. */
+export function seriesDescription(slug: string): string | undefined {
+  return SERIES_DESCRIPTIONS[slug];
+}
+
+export type Round = {
+  series: string;
+  title: string;
+  description?: string;
+  posts: Post[];
+};
 
 /** Group posts into rounds (by `series`), plus a loose bucket for unseried posts. */
 export function groupBySeries(posts: Post[]): { rounds: Round[]; loose: Post[] } {
@@ -40,6 +53,7 @@ export function groupBySeries(posts: Post[]): { rounds: Round[]; loose: Post[] }
   const rounds: Round[] = [...map.entries()].map(([series, ps]) => ({
     series,
     title: seriesTitle(series),
+    description: seriesDescription(series),
     posts: ps.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0)),
   }));
   // Newest round first (by most recent post in each round).
