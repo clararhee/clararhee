@@ -5,7 +5,7 @@ pubDate: 2026-06-12
 tags: ["workflow", "ai", "tools", "roblox"]
 series: "round-1"
 order: 2
-draft: true
+draft: false
 ---
 
 After four months of building solo with AI, the skill that mattered most had nothing to do with any particular tool. It was learning to spot which tools and habits actually fit how I work. Most days, my real job was noticing where my own process was slow or clunky, naming the problem, then finding the fix that fit.
