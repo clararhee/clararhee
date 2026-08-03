@@ -28,5 +28,5 @@ export const RSS_TITLE = `${SITE.wordmark} — ${SITE.author}`;
 
 // Optional human-readable titles for series slugs used in post frontmatter.
 export const SERIES_TITLES: Record<string, string> = {
-  'round-1': 'Round 1',
+  'round-1': 'Round 1: Roblox',
 };

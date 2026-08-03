@@ -39,7 +39,7 @@ I left on January 31, 2026.
 
 <figure>
   <img src="/images/pubg-badge.jpg" alt="A PUBG Studios employee badge reading Clara Yongeun Rhee, Producer, Krafton, on a lanyard with a green crochet clover charm." style="display:block;width:50%;margin:0 auto" />
-  <figcaption>My producer badge at PUBG Studios, Krafton.</figcaption>
+  <figcaption>My badge at PUBG Studios, Krafton.</figcaption>
 </figure>
 
 ## Why a game, and why Roblox
@@ -121,7 +121,7 @@ I brainstormed with [Gemini](https://gemini.google.com) and shipped one update: 
 
 <figure>
   <img src="/images/yeet-snowball.jpg" alt="In-game Yeet Arena deathmatch: a snowy arena with another player, a kills counter and timer in the HUD." />
-  <figcaption>The deathmatch mode in-game: a time limit, most kills wins. (Another player's name blurred.)</figcaption>
+  <figcaption>The deathmatch mode in-game: a time limit, most kills wins.</figcaption>
 </figure>
 
 The decision to kill it stung in a quiet way. I'd known the game wasn't carefully designed, and games that aren't carefully designed don't tend to retain. The result wasn't surprising, but that doesn't mean it didn't hurt.
@@ -141,7 +141,7 @@ For the second game I changed the question. Game 1 was about *can I ship.* Game 
 
 <figure>
   <img src="/images/crawler-data.png" alt="A data table named game_trends_data listing Roblox games with columns for genre tags, current players, visits, likes, dislikes, a retention index, and a satisfaction score." />
-  <figcaption>A slice of the opportunity crawler's output: Roblox games by genre, with rough retention and satisfaction scores.</figcaption>
+  <figcaption>A slice of the opportunity crawler's output</figcaption>
 </figure>
 
 I built a small Python tool to help me decide. I called it the opportunity crawler. After years in production, looking at market data before a decision was just my reflex. The crawler itself was simple. It pulled data on Roblox genres like simulator, tycoon, obby, and roleplay: concurrents, ratings, visits, likes, dislikes. From those it derived rough scores for retention and satisfaction. The goal was to find genres where the average game's polish was within reach of one person working with AI.
@@ -152,7 +152,7 @@ I picked a game cartridge rental concept, inspired by [*Retro Rewind*](https://s
 
 <figure>
   <video src="/images/game-rental.mp4" controls preload="metadata"></video>
-  <figcaption>About a minute of Game Rental Simulator: renting cartridges and restocking the shelves</figcaption>
+  <figcaption>About a minute of Game Rental Simulator: renting cartridges, restocking the shelves, and cleaning the store</figcaption>
 </figure>
 
 ### Launch, and a $10,000 economy bug
@@ -163,7 +163,7 @@ The launch itself didn't go cleanly. The day I shipped, I joined my game on mobi
 
 <figure>
   <img src="/images/game-rental-10000.jpg" alt="Game Rental Simulator in-game: a store interior with 10,000 dollars shown in the register." />
-  <figcaption>$10,000 in the register on launch. I'd meant to start players with 200. (This shot is from my dev account, but it's the same number that greeted every new player.)</figcaption>
+  <figcaption>$10,000 in the register on launch. I'd meant to start players with 200.</figcaption>
 </figure>
 
 I went from the couch to my desk in about four seconds. Killed the ads. Pushed a fix. Republished. Turned the ads back on. While doing so, I also made the decision to wipe everyone's progress rather than leave the whole economy broken. I also offered them a promo code they could use as a sorry gift.
